@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .iframes{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .iframes>iframe{
+                width: 300px;
+                height: 300px;
+                border: 2px solid black;
+            }
+            .wide_screen>iframe{
+                width: 1500px;
+                height: 1000px;
+            }
+        </style>
+        <script type="text/javascript">
+            var count = 0;
+
+            function submit(){
+                if(count < 8){
+                    var url = document.getElementById('url').value;
+                    url = "https://" + url;
+                    const new_iframe = document.createElement('iframe');
+                    new_iframe.setAttribute('src', url);
+                    new_iframe.addEventListener('mouseover', function(){
+                        const wide_iframe = document.getElementById('wide');
+                        wide_iframe.setAttribute('src', url);
+                        wide_iframe.removeAttribute('hidden');
+                    });
+
+                    document.querySelector('div.iframes').appendChild(new_iframe);
+                    count++;
+                }
+                else{
+                    window.alert("8개를 초과하여 생성할수 없습니다!!!")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text", placeholder="사이트 URL 입력(ex| www.example.com)", id="url", size="30">
+        <input type="button", value = "입력", onclick="submit()">
+        <br>
+        <br>
+        <div class="iframes">
+            
+        </div>
+        <div class="wide_screen">
+            <iframe id="wide", hidden></iframe>
+        </div>
+    </body>
+</html>

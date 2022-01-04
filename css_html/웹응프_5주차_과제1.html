@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .pagination{
+                display: inline-grid;
+            }
+            .pagination a {
+                color:black;
+                float: left;
+                padding: 6px 12px;
+                text-decoration: none;
+                background-color: white;
+            }
+            .pagination a.active{
+                background-color: yellowgreen;
+            }
+
+            .pagination a:hover:not(.active){
+                background-color: lightgray;    
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pagination">
+            <a href=""><<</a>
+            <a href="https://www.naver.com/">HOME</a>
+            <a href="https://news.naver.com/">NEWS</a>
+            <a href="https://www.joongang.co.kr/" class="active">ARTICLE</a>
+            <a href="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0">BLOG</a>
+            <a href="https://map.naver.com">MAP</a>
+            <a href="">>></a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>링크5개사이트</title>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type= "text/javascript"> 
+            $(function(){
+                var links= document.querySelectorAll("a");
+                a = [];
+                for(var i = 0; i < links.length; i++){
+                    a.push(links[i].href);
+                }
+                localStorage.setItem("links", a);
+            });
+        </script> 
+    </head>
+    <html>
+        <body>
+            <h1>링크5개사이트</h1>
+            <a href = "https://cse.pusan.ac.kr/cse/index.do">a</a>
+            <a href = "https://bce.pusan.ac.kr/bce/index.do">b</a>
+            <a href = "https://me.pusan.ac.kr/new/main/index.asp">c</a>
+            <a href = "https://ee.pusan.ac.kr/ee/index.do">d</a>
+            <a href = "https://civil.pusan.ac.kr/civil/index.do">e</a>
+        </body>
+    </html>
+</html>

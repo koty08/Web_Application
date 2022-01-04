@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE restaurant [
+<!ELEMENT restaurant (food, beverage, summary)>
+<!ELEMENT food (kind, price)>
+<!ELEMENT beverage (volume, price)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT kind (#PCDATA)>
+<!ELEMENT volume (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+]>
+
+<restaurant>
+    <food>
+        <kind>양식</kind>
+        <price>6000원</price>
+    </food>
+    <beverage>
+        <volume>200ml</volume>
+        <price>2000원</price>
+    </beverage>
+    <summary>맛집</summary>
+</restaurant>

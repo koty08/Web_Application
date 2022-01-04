@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript">
+            function get_cookie(name){
+                var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+                return value? value[2] : null;
+            }
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <a>이름: </a>
+                <script>document.write(get_cookie("name"))</script>
+            </li>
+            <li>
+                <a>나이: </a>
+                <script>document.write(get_cookie("age"))</script>
+            </li>
+        </ul>
+    </body>
+</html>

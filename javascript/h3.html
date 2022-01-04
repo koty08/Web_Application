@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <style>
+            iframe{
+                width: 300px;
+                height: 300px;
+            }
+            .wide_screen>iframe{
+                width: 1000px;
+                height: 600px;
+            }
+            .under_6{
+                width: 1500px;
+            }
+            .more_6{
+                width: 1500px;
+                height: 400px;
+                overflow: auto;
+            }
+        </style>
+        <script type="text/javascript">
+            function submit(){
+                localStorage.clear();
+                var url = document.getElementById('url').value;
+                const wide_iframe = document.getElementById('wide');
+                wide_iframe.setAttribute('src', url);
+                wide_iframe.removeAttribute('hidden');
+            }
+
+            window.addEventListener("storage", function () {
+                $('.under_6').empty();
+                $('.more_6').empty();
+
+                var links = localStorage.getItem("links").split(",");
+
+                var url = links[0];
+                const wide_iframe = document.getElementById('wide');
+                wide_iframe.setAttribute('src', url);
+
+                if(links.length <= 6){
+                    for(var i = 0; i < links.length; i++){
+                        var $ifrm = $("<iframe></iframe>");
+                        $ifrm.attr('src', links[i]);
+                        $ifrm.appendTo($('.under_6'));
+                    } 
+                }
+                else{
+                    for(var i = 0; i < links.length; i++){
+                        var $ifrm = $("<iframe></iframe>");
+                        $ifrm.attr('src', links[i]);
+                        $ifrm.appendTo($('.more_6'));
+                    } 
+                }
+            }, false);
+        </script>
+    </head>
+
+    <body>
+        <input type="text", placeholder="사이트 URL 입력(ex| www.example.com)", id="url", size="30">
+        <input type="button", value = "입력", onclick="submit()">
+        <br>
+        <br>
+        <div class="wide_screen">
+            <iframe id="wide", hidden></iframe>
+        </div>
+        <div class="under_6">
+        </div>
+        <div class="more_6">
+        </div>
+        <br>
+        <br>
+    </body>
+</html>

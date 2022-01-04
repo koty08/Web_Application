@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type= "text/javascript"> 
+            function submit(){
+                var j_data = $('#input').val();
+                localStorage.setItem("json_data", JSON.stringify(j_data));
+            }
+            
+            function check(){
+                alert(JSON.parse(localStorage.getItem('json_data')));
+            }
+        </script> 
+    </head>
+    <body>
+        <input type = "text" id="input" placeholder = "JSON 형식으로 데이터 입력">
+        <input type = "button" value = "입력" onclick = "submit()">
+        <br>
+        <br>
+        <input type = "button" value = "값 확인" onclick = "check()">
+    </body>
+</html>

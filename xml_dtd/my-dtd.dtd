@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT restaurant (food, beverage)>
+<!ELEMENT food (kind, price)>
+<!ELEMENT beverage (volume, price)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT kind (#PCDATA)>
+<!ELEMENT volume (#PCDATA)>
