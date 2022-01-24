@@ -13,7 +13,7 @@ app.get('/api1', function(req, res){
   var request = require('request');
   var options = {
     'method': 'GET',
-    'url': 'http://apis.data.go.kr/6260000/GoodPriceStoreService/getGoodPriceStore?serviceKey=7CnMjs%2BvUtCQZB5feF%2BocvQyliwg7iASHxOCs2kp0rrFEASEFuE33MonHzBuYD7ihBZktRNwu15cJpgBg%2FF7QA%3D%3D&numOfRows=5&pageNo=1&localeCd=41&resultType=json',
+    'url': 'http://apis.data.go.kr/6260000/GoodPriceStoreService/getGoodPriceStore?serviceKey=----&numOfRows=5&pageNo=1&localeCd=41&resultType=json',
     'headers': {
     }
   };
@@ -30,7 +30,7 @@ app.get('/api2', function(req, res){
   var request = require('request');
   var options = {
     'method': 'GET',
-    'url': 'http://apis.data.go.kr/6260000/GoodPriceStoreService/getGoodPriceStore?serviceKey=7CnMjs%2BvUtCQZB5feF%2BocvQyliwg7iASHxOCs2kp0rrFEASEFuE33MonHzBuYD7ihBZktRNwu15cJpgBg%2FF7QA%3D%3D&numOfRows=4&pageNo=1&localeCd=103&resultType=json',
+    'url': 'http://apis.data.go.kr/6260000/GoodPriceStoreService/getGoodPriceStore?serviceKey=----&numOfRows=4&pageNo=1&localeCd=103&resultType=json',
     'headers': {
     }
   };
@@ -62,7 +62,7 @@ app.get('/api3', function(req, res){
 //------------------------------ 네이버 API ------------------------------------
 
 var client_id = 'KbWNe1vJ1voKNcgdT5C9'; // API Client - ID
-var client_secret = 'mA9bH3JsqS'; // API Client- 비밀번호
+var client_secret = '----'; // API Client- 비밀번호
 
 app.get('/search/blog', function (req, res) {
   var api_url = 'https://openapi.naver.com/v1/search/blog?query=' + encodeURI(req.query.query);
